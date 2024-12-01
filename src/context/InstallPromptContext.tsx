@@ -5,7 +5,7 @@ import {
   useContext,
   useEffect,
   useState,
-  ReactNode
+  ReactNode,
 } from "react";
 
 interface InstallPromptContextProps {
@@ -15,11 +15,11 @@ interface InstallPromptContextProps {
 
 const InstallPromptContext = createContext<InstallPromptContextProps>({
   installPrompt: null,
-  isInstalled: false
+  isInstalled: false,
 });
 
 export const InstallPromptProvider = ({
-  children
+  children,
 }: {
   children: ReactNode;
 }) => {
@@ -37,7 +37,7 @@ export const InstallPromptProvider = ({
       const standalone =
         window.matchMedia("(display-mode: standalone)").matches ||
         window.navigator.standalone;
-      setIsInstalled(standalone);
+      setIsInstalled(standalone!);
     };
 
     window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
