@@ -1,0 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# First, run lint-staged
+npm run lint-staged
+
+# Then try to build the project
+npm run build-check
