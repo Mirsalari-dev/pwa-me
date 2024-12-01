@@ -1,20 +1,25 @@
 "use client";
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
 import {
   Dialog,
   DialogTitle,
   DialogContent,
   DialogActions,
   Button,
-  Typography,
+  Typography
 } from "@mui/material";
 import { useInstallPrompt } from "@/context/InstallPromptContext";
 
 const InstallPromptModal = () => {
   const { installPrompt, isInstalled } = useInstallPrompt();
-  const [open, setOpen] = useState<boolean>(
-    !isInstalled && installPrompt !== null
-  );
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (installPrompt && !isInstalled) {
+      setOpen(true);
+    }
+  }, [installPrompt, isInstalled]);
 
   const handleInstallClick = () => {
     if (installPrompt) {
@@ -37,11 +42,7 @@ const InstallPromptModal = () => {
         <Typography>Get a better experience by installing the app!</Typography>
       </DialogContent>
       <DialogActions>
-        <Button
-          onClick={handleInstallClick}
-          variant="contained"
-          color="primary"
-        >
+        <Button onClick={handleInstallClick} variant="contained" color="primary">
           Install
         </Button>
         <Button
