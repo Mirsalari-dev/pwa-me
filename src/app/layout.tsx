@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "سرمایه گذاری",
     "لیزینگ",
     "پورتفوی",
-    "سوپر اپلیکیشن پاداش"
+    "سوپر اپلیکیشن پاداش",
   ],
   icons: {
     icon: [
@@ -26,32 +26,32 @@ export const metadata: Metadata = {
         media: "(prefers-color-scheme: light)",
         url: "/images/logo.png",
         href: "/images/logo.png",
-        rel: "shortcut icon"
+        rel: "shortcut icon",
       },
       {
         media: "(prefers-color-scheme: dark)",
         url: "/images/logo.png",
         href: "/images/logo.png",
-        rel: "apple-touch-icon"
-      }
-    ]
-  }
+        rel: "apple-touch-icon",
+      },
+    ],
+  },
 };
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" }
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+    { media: "(prefers-color-scheme: light)", color: "#000000" },
   ],
   minimumScale: 1,
   initialScale: 1,
   width: "device-width",
   viewportFit: "cover",
-  userScalable: false
+  userScalable: false,
 };
 
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
