@@ -1,10 +1,10 @@
 {
-  "name": "Your App Name",
-  "short_name": "AppName",
-  "description": "Your app description",
+  "name": "Padash App",
+  "short_name": "Padash App",
+  "description": "Super app Padash",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "#1976d2",
   "theme_color": "#1976d2",
   "orientation": "portrait",
   "icons": [
